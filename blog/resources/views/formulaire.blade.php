@@ -3,7 +3,7 @@
 @section('contenu')
 <div class="container">
     <div class="row justify-content-center">
-        <h1>Titre du test</h1>
+        <h1>Survey title</h1>
     </div>
     <form action="/" method="post">
         <div class="form-group row">
@@ -35,12 +35,12 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="180" name="why_survey"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="row justify-content-center""><h2>Your profesional situation?</h2></label>
+            <label for="exampleFormControlTextarea1" class="row justify-content-center""><h2>Your professional situation?</h2></label>
         </div>
         <div class="form-group row justify-content-around">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck1">
-                <label class="form-check-label" for="gridCheck1">Studying</label>
+                <label class="form-check-label" for="gridCheck1">Student</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck1">
