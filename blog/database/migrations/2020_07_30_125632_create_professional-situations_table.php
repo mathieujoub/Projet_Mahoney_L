@@ -15,11 +15,14 @@ class CreateProfessionalSituationsTable extends Migration
     {
         Schema::create('professional_situations', function (Blueprint $table) {
             $table->id();
-            $table->string('inactivity');
-            $table->string('activity');
-            $table->string('retraining');
-            $table->string('freelance');
-            $table->string('id_others');
+            $table->string('inactivity')->nullable();
+            $table->string('activity')->nullable();
+            $table->string('retraining')->nullable();
+            $table->string('freelance')->nullable();
+            $table->string('id_others')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+
         });
     }
 

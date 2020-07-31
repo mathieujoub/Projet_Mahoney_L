@@ -15,9 +15,12 @@ class CreateNewslettersTable extends Migration
     {
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
-            $table->string('dateSubscribe'); 
-            $table->string('mail');
-            $table->string('PDF');
+            $table->string('dateSubscribe')->nullable(); 
+            $table->string('mail')->nullable();
+            $table->string('PDF')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 

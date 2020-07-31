@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/serviceinfo',  'ListresultController@index');
+Route::post('/serviceinfo',  'ListresultController@store');
+Route::get('/service',  'ListresultentreeController@index');
+Route::post('/service',  'ListresultentreeController@store');

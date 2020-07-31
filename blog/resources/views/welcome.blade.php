@@ -68,8 +68,13 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
+
+                        <a href="../public/serviceinfo">Info services</a>
+
                         <a href="{{ url('/home') }}">Home</a>
                     @else
+
+                        <a href="../public/service">Service</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))

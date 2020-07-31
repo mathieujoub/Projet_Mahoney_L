@@ -15,22 +15,28 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastename');
-            $table->string('birth');
-            $table->string('nationnality');
-            $table->string('why_survey');
-            $table->string('date_survey');
-            $table->string('professional_situation_id');
-            $table->string('newsletters_id');
-            $table->string('survey_id');
-            $table->string('score_survey');
-            $table->string('score_catergorys');
-            $table->string('result_surevey_text');
-            $table->string('result_categoty_test');
-            $table->string('started_at');
-            $table->string('ended_at');
-           
+            $table->string('firstname')->nullable();
+            $table->string('lastename')->nullable();
+            $table->string('birth')->nullable();
+            $table->string('nationnality')->nullable();
+            $table->string('why_survey')->nullable();
+            $table->string('date_survey')->nullable();
+            $table->string('professional_situation_id')->nullable();
+            $table->string('newsletters_id')->nullable();
+            $table->string('survey_id')->nullable();
+            $table->string('score_survey')->nullable();
+            $table->string('score_catergorys')->nullable();
+            $table->string('result_surevey_text')->nullable();
+            $table->string('result_categoty_test')->nullable();
+            $table->string('started_at')->nullable();
+            $table->string('ended_at')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password')->nullable();
+            $table->rememberToken()->nullable();
+            $table->timestamps();
+
         });
     }
 

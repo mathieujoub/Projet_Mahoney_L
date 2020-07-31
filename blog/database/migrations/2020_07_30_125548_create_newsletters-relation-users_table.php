@@ -14,9 +14,12 @@ class CreateNewslettersRelationUsersTable extends Migration
     public function up()
     {
         Schema::create('newslettersRelationUsers', function (Blueprint $table) {
-            $table->string('id_users');
-            $table->string('id_newsletters'); 
-            $table->string('subscribe');
+            $table->string('id_users')->nullable();
+            $table->string('id_newsletters')->nullable(); 
+            $table->string('subscribe')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 

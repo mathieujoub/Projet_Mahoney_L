@@ -15,9 +15,12 @@ class CreateListResultsTable extends Migration
     {
         Schema::create('ListResults', function (Blueprint $table) {
             $table->id();
-            $table->string('nameText');
-            $table->string('Value');
-            $table->string('contentText');
+            $table->string('nameText')->nullable();
+            $table->string('Value')->nullable();
+            $table->string('contentText')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 

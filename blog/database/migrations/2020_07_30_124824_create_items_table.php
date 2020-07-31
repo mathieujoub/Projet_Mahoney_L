@@ -15,9 +15,12 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
-            $table->string('nature');
-            $table->string('answerValue');
+            $table->string('content')->nullable();
+            $table->string('nature')->nullable();
+            $table->string('answerValue')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 
