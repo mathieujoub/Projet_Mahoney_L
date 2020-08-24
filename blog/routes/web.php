@@ -13,11 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/formulaire', function () {
+
+
+
+Route::get('/', function () {
     return view('formulaire');
 });
 
-Route::resource('/', 'FormsController');
+Route::get('/survey', function () {
+    return view('survey');
+});
+
+
+Route::get('/result', function () {
+    return view('result');
+});
+
+Route::resource('/formulaire', 'FormsController');
 
 
  /*$utilisateur =  App\user_mahoney;

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <h1>Survey title</h1>
     </div>
-    <form action="/" method="post">
+    <form action="/formulaire" method="POST">
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">First name:</label>
             <div class="col-sm-10">
