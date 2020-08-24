@@ -16,7 +16,7 @@ class CreateNewslettersRelationUsersTable extends Migration
         Schema::create('newslettersRelationUsers', function (Blueprint $table) {
             $table->foreignId('users_mahonneys_id')->constrained();
             $table->foreignId('newsletters_id')->constrained();
-            $table->interger('subscribe');
+            $table->integer('subscribe');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewslettersTable extends Migration
+class CreateSurveysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateNewslettersTable extends Migration
      */
     public function up()
     {
-        Schema::create('newsletters', function (Blueprint $table) {
+        Schema::create('surveys', function (Blueprint $table) {
             $table->id();
-            $table->string('dateSubscribe'); 
-            $table->string('email')->unique();
-            $table->string('PDF');
+            $table->foreignId('catergories_id')->constrained()->onDelete('cascade');
+            $table->foreignId('list-results_id')->constrained()->onDelete('cascade');
+           
         });
     }
 
@@ -28,6 +28,6 @@ class CreateNewslettersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newsletters');
+        Schema::dropIfExists('surveys');
     }
 }

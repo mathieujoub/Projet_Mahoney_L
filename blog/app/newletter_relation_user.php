@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class newletter_relation_user extends Model
+class newletters_relation_user extends Model
 {
     protected $fillable = [
-       'id_users',
-       'id_newsletters', 
+       'users_id',
+       'newsletters_id', 
        'subscribe',
     ];
 }
