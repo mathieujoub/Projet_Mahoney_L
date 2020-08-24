@@ -8,8 +8,8 @@ class categorie extends Model
 {
     protected $fillable = [
         'is',
-        'namecategories',
-        'idItems',
-        'idListResults',
+        'categoriesName',
+        'items_id',
+        'id_list-results',
     ];
 }

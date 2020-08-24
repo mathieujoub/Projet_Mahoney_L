@@ -11,6 +11,6 @@ class professional_situation extends Model
         'activity',
         'retraining',
         'freelance',
-        'id_others',
+        'others_id',
     ];
 }

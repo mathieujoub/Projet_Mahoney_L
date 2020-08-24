@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewslettersRelationUsersTable extends Migration
+class CreateNewslettersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateNewslettersRelationUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('newslettersRelationUsers', function (Blueprint $table) {
-            $table->string('id_users');
-            $table->string('id_newsletters'); 
-            $table->string('subscribe');
+        Schema::create('newsletters', function (Blueprint $table) {
+            $table->id();
+            $table->date('dateSubscribe'); 
+            $table->string('email')->unique();
+            $table->integer('PDF');
         });
     }
 
@@ -27,6 +28,6 @@ class CreateNewslettersRelationUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newslettersRelationUsers');
+        Schema::dropIfExists('newsletters');
     }
 }

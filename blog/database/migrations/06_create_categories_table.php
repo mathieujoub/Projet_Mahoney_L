@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListResultsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateListResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ListResults', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('nameText');
-            $table->string('Value');
-            $table->string('contentText');
+            $table->string('categoriesName');
+            $table->foreignId('items_id')->constrained()->onDelete('cascade');
+            $table->foreignId('list-results_id')->constrained()->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateListResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listResults');
+        Schema::dropIfExists('categories');
     }
 }

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class user_mahoney extends Model
 {
     protected $fillable = [
@@ -18,7 +19,7 @@ class user_mahoney extends Model
             'newsletters_id',
             'survey_id',
             'score_survey',
-            'score_catergorys',
+            'score_catergories',
             'result_surevey_text',
             'result_categoty_test',
             'started_at',
