@@ -14,9 +14,9 @@ class CreateNewslettersRelationUsersTable extends Migration
     public function up()
     {
         Schema::create('newslettersRelationUsers', function (Blueprint $table) {
-            $table->string('id_users');
-            $table->string('id_newsletters'); 
-            $table->string('subscribe');
+            $table->foreignId('users_mahonneys_id')->constrained();
+            $table->foreignId('newsletters_id')->constrained();
+            $table->interger('subscribe');
         });
     }
 

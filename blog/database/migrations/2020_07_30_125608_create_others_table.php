@@ -15,7 +15,7 @@ class CreateOthersTable extends Migration
     {
         Schema::create('others', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->string('description', 80);
         });
     }
 

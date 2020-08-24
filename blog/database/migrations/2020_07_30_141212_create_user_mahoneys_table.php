@@ -22,17 +22,17 @@ class CreateUserMahoneysTable extends Migration
             $table->tinyInteger('nationality')->unsigned()->default(Countries::FR);
             $table->string('why_survey', 250);
             $table->date('date_survey');
-            $table->integer('professional_situation_id');
-            $table->integer('newsletter_id');
-            $table->integer('survey_id');
+            $table->foreignId('professional_situation_id')->constrained();
+            $table->foreignId('newsletter_id')->constrained();
+            $table->foreignId('survey_id')->constrained();
             $table->integer('score_survey');
             $table->integer('score_caterories');
             $table->text('result_survey_text');
             $table->text('result_categories_test');
             $table->timestamps('started_at');
             $table->timestamps('ended_at');
-         });
-    }
+    });
+}
 
     /**
      * Reverse the migrations.
