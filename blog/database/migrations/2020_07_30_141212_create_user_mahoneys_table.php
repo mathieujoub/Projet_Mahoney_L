@@ -31,7 +31,7 @@ class CreateUserMahoneysTable extends Migration
             $table->text('result_categories_test');
             $table->timestamps('started_at');
             $table->timestamps('ended_at');
-        });
+         });
     }
 
     /**
