@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('categoriesName');
             $table->foreignId('items_id')->constrained()->onDelete('cascade');
-            $table->foreignId('list-results_id')->constrained()->onDelete('cascade');
+            $table->foreignId('list_results_id')->constrained()->onDelete('cascade');
         });
     }
 

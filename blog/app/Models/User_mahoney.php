@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,7 @@ class user_mahoney extends Model
             'score_survey',
             'score_catergories',
             'result_surevey_text',
-            'result_categoty_test',
+            'result_categories_test',
             'started_at',
             'ended_at',
     ];

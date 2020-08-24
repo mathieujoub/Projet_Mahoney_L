@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListResultsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateListResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('List_results', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('nameText');
-            $table->interger('value');
-            $table->text('contentText');
+            $table->text('content');
+            $table->integer('nature');
+            $table->integer('answerValue');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateListResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listResults');
+        Schema::dropIfExists('items');
     }
 }

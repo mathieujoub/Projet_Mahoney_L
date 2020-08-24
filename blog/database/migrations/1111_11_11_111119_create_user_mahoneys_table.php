@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Enums\Countries;
 
+
 class CreateUserMahoneysTable extends Migration
 {
     /**
@@ -19,20 +20,20 @@ class CreateUserMahoneysTable extends Migration
             $table->string('firstname', 50);
             $table->string('lastname', 50);
             $table->year('birth');
-            $table->tinyInteger('nationality')->unsigned()->default(Countries::FR);
+            $table->string('nationality', 50)->default(Countries::FR);
             $table->string('why_survey', 250);
             $table->date('date_survey');
-            $table->foreignId('professional_situation_id')->constrained();
-            $table->foreignId('newsletter_id')->constrained();
-            $table->foreignId('survey_id')->constrained();
+            $table->foreignId('professional_situations_id')->constrained();
+            $table->foreignId('newsletters_id')->constrained();
+            $table->foreignId('surveys_id')->constrained();
             $table->integer('score_survey');
-            $table->integer('score_caterories');
+            $table->integer('score_categories');
             $table->text('result_survey_text');
             $table->text('result_categories_test');
-            $table->timestamps('started_at');
-            $table->timestamps('ended_at');
-    });
-}
+            $table->DATETIME('started_at');
+            $table->DATETIME('ended_at');
+        });
+    }
 
     /**
      * Reverse the migrations.
