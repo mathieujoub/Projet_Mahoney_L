@@ -16,7 +16,7 @@ class CreateListResultsTable extends Migration
         Schema::create('ListResults', function (Blueprint $table) {
             $table->id();
             $table->string('nameText');
-            $table->string('Value');
+            $table->string('value');
             $table->string('contentText');
         });
     }

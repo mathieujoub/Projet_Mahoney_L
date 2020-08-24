@@ -14,10 +14,10 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->increments('is');
-            $table->string('namecategories');
-            $table->string('idItems')->unique();
-            $table->string('idListResults')->unique();
+            $table->id();
+            $table->string('categoriesName');
+            $table->foreignId('id_items')->constrained()->onDelete('cascade');
+            $table->foreignId('id_list-results')->constrained()->onDelete('cascade');
         });
     }
 

@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string('content');
             $table->string('nature');
-            $table->string('answerValue');
+            $table->integer('answerValue');
         });
     }
 

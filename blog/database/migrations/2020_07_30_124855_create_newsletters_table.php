@@ -16,7 +16,7 @@ class CreateNewslettersTable extends Migration
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
             $table->string('dateSubscribe'); 
-            $table->string('mail');
+            $table->string('email')->unique();
             $table->string('PDF');
         });
     }

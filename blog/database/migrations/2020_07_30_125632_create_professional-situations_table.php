@@ -19,7 +19,7 @@ class CreateProfessionalSituationsTable extends Migration
             $table->string('activity');
             $table->string('retraining');
             $table->string('freelance');
-            $table->string('id_others');
+            $table->int('id_others');
         });
     }
 

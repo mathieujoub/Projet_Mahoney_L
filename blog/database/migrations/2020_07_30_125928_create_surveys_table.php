@@ -15,8 +15,9 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
-            $table->string('id_catergorys');
-            $table->string('id_liste_resulte');
+            $table->foreignId('id_catergorys')->constrained()->onDelete('cascade');
+            $table->foreignId('id_liste_resulte')->constrained()->onDelete('cascade');
+           
         });
     }
 
