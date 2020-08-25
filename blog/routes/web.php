@@ -13,29 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::view('/', 'welcome');
+Route::get('/formulaire', 'FormulaireController@formulaire');
+Route::post('/formulaire', 'FormulaireController@traitement');
 
 
-
-Route::get('/', function () {
-    return view('formulaire');
-});
-
-Route::get('/survey', function () {
-    return view('survey');
-});
-
-
-Route::get('/result', function () {
-    return view('result');
-});
-
-Route::resource('/formulaire', 'FormsController');
-
-
- /*$utilisateur =  App\user_mahoney;
-    $utilisateur->firstname = request('firstname');
-    $utilisateur->lastname = request('lastname');
-    $utilisateur->birth = request('birth');
-    $utilisateur->nationnality = request('nationnality');
-    $utilisateur->why_survey = request('why_survey');
-    $utilisateur->save();*/

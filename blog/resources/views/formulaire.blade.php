@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <h1>Survey title</h1>
     </div>
-    <form action="/formulaire" method="POST">
+    <form action="/formulaire" method="post">
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">First name:</label>
             <div class="col-sm-10">
@@ -27,7 +27,9 @@
         <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Nationality:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nationality" name="nationnality">
+            <select class="nationality" name="country" placeholder="France">
+            
+        </select> 
             </div>
         </div>
         <div class="form-group">
