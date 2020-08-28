@@ -11,4 +11,10 @@ class newsletters extends Model
         'mail',
         'PDF',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('\App\Models\User');
+    }
+
 }

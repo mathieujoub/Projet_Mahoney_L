@@ -11,4 +11,11 @@ class list_result extends Model
         'Value',
         'contentText',
     ];
+
+    public function categories()
+    {
+        return $this->hasMany('\App\Models\Category');
+    }
+
+
 }

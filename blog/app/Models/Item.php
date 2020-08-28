@@ -10,5 +10,12 @@ class item extends Model
         'content',
         'nature',
         'answerValue',
+        'category_id',
     ];
+
+    public function categories()
+    {
+        return $this->belongsTo('\App\Models\Category');
+    }
+
 }

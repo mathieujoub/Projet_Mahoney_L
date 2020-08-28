@@ -15,11 +15,15 @@ class CreateProfessionalSituationsTable extends Migration
     {
         Schema::create('professional_situations', function (Blueprint $table) {
             $table->id();
-            $table->integer('inactivity');
-            $table->integer('activity');
-            $table->integer('retraining');
-            $table->integer('freelance');
-            $table->foreignId('others_id')->constrained()->onDelete('cascade');
+            $table->integer('Student')->nullable();
+            $table->integer('Self_employed')->nullable();
+            $table->integer('Employed')->nullable();
+            $table->integer('Unemployed')->nullable();
+            $table->integer('Other')->nullable();
+            $table->integer('Changing_jobs')->nullable();
+            $table->text('Description_other', 80)->nullable();
+            $table->timestamps();
+            
         });
     }
 

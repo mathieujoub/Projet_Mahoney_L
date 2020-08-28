@@ -2,33 +2,56 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\Models\User;
+use App\Models\Professional_situation;
+
 
 class FormulaireController extends Controller
 {
-    public function formulaire()
-    {
-        return view('formulaire');
+
+
+    public function index () {
+        return view ('/formulaire');
     }
 
-    public function traitement()
-    {
+    
+    public function postForm() {
+
         request()->validate([
-            'firstname' => ['required', 'firstname'],
-            'lastname' => ['required', 'lastname'],
-            'birth' => ['required', 'birth'],
-            'why_survey' => ['required', 'why_survey']
-            
+
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'birth' => ['required', 'date'],
+            'nationality' => ['required']
         ]);
 
-        $utilisateur = User_mahonney::create([
+        $utilisateur = User::create([
+
             'firstname' => request('firstname'),
             'lastname' => request('lastname'),
             'birth' => request('birth'),
-            /*'nationnality' => request('nationnality'),*/
+            'nationality' => request('nationality'),
             'why_survey' => request('why_survey')
-            /*'professional_situation_id' => request('professional_situation_id'),*/
         ]);
-        return view('survey');
+
+        $professional = Professional_situation::create([
+            
+            'Student' => request('student'),
+            'Self_employed' => request('selfEmployed'),
+            'Employed' => request('employed'),
+            'Unemployed' => request('unemployed'),
+            'Other' => request('other'),
+            'Changing_jobs' => request('changingJobs'),
+            'Description_other' =>request('description_other')
+        ]);
+
+        
+
+        return view('/survey');
     }
+
+        
+        
 }
+

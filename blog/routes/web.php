@@ -13,8 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
-Route::get('/formulaire', 'FormulaireController@formulaire');
-Route::post('/formulaire', 'FormulaireController@traitement');
+
+
+
+
+
+
+Route::get('/' , 'FormulaireController@index')->name('formulaire.index');
+Route::post('/formulaire' , 'FormulaireController@postForm')->name('formulaire.postForm');
+route::get('/survey' , 'SurveyController@printSurvey')->name('survey.printSurvey');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/serviceinfo',  'ListresultController@index');
 
 

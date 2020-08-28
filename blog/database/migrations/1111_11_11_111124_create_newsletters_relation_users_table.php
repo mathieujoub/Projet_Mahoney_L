@@ -14,7 +14,7 @@ class CreateNewslettersRelationUsersTable extends Migration
     public function up()
     {
         Schema::create('newsletters_relation_users', function (Blueprint $table) {
-            $table->foreignId('user_mahoneys_id')->constrained()->onDelete('cascade');;
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');;
             $table->foreignId('newsletters_id')->constrained()->onDelete('cascade');; 
             $table->integer('subscribe');
         });

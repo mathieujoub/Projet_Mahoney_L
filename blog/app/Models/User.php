@@ -16,7 +16,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname',
+        'lastname',
+        'email',
+        'password',
+        'birth',
+        'nationality',
+        'why_survey',
+        'date_survey',
+        'professional_situation_id',
+        'newsletters_id',
+        'survey_id',
+        'score_survey',
+        'score_categories',
+        'result_survey_text',
+        'result_category_test',
+        'started_at',
+        'ended_at',
         
     ];
 
@@ -37,4 +53,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function survey()
+    {
+        return $this->hasOne('\App\Models\Survey');
+    }
+
+    public function newsletter()
+    {
+        return $this->hasOne('\App\Models\Newsletter_relation_user');
+    }
+
+    public function mail()
+    {
+        return $this->hasOne('\App\Models\Newsletter');
+    }
+
+    public function professional_situation()
+    {
+        return $this->hasOne('\App\Models\Professional_situation');
+    }
 }
