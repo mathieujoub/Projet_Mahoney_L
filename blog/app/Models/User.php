@@ -69,8 +69,8 @@ class User extends Authenticatable
         return $this->hasOne('\App\Models\Newsletter');
     }
 
-    public function professional_situation()
+    public function professional_situations()
     {
-        return $this->hasOne('\App\Models\Professional_situation');
+        return $this->hasOne(Professional_situation::class);
     }
 }

@@ -18,6 +18,9 @@
                     @endauth
                 </div>
             @endif
+            <div class="row justify-content-center">
+                <h1>Survey title</h1>
+            </div>
             <form action="/formulaire" method="post">
     
     {{ csrf_field() }}
